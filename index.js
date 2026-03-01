@@ -18,7 +18,7 @@ client.on("ready", () => {
 client.on("messageCreate", message => {
   if (message.author.bot) return;
 
-  const kentRegex = /\bkent\b/i;
+  const kentRegex = /kent/i;
   if (kentRegex.test(message.content)) {
     const targetChannel = message.guild.channels.cache.get(TARGET_CHANNEL_ID);
     if (targetChannel) targetChannel.send(imageURL);
@@ -27,3 +27,4 @@ client.on("messageCreate", message => {
 
 // ✅ Login using environment variable
 client.login(process.env.TOKEN);
+
